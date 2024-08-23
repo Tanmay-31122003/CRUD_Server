@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userRoutes = require("./routes/user-routes");
 const app = express();
 const port = 3000;
-const cors = require("cors")
+const cors = require("cors");
 
 app.use(cors());
 app.use(express.json());
@@ -16,15 +16,15 @@ app.use(userRoutes);
 
 async function connectdb() {
   try {
-    await mongoose.connect("mongodb+srv://tanmaybagal03:gIpFLyoYK8Q7pc2p@userdb.6pkzh.mongodb.net/", {
+    await mongoose.connect("your-connection-string", {
       dbName: "UserDB",
     });
     console.log('Connected to MongoDB');
   } catch (err) {
     console.error('Failed to connect to MongoDB', err);
+    process.exit(1);
   }
 }
-connectdb();
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
