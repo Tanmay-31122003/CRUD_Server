@@ -26,6 +26,8 @@ async function connectdb() {
   try {
     await mongoose.connect("mongodb+srv://tanmaybagal03:gIpFLyoYK8Q7pc2p@userdb.6pkzh.mongodb.net/", {
       dbName: "UserDB",
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
     console.log('Connected to MongoDB');
   } catch (err) {
