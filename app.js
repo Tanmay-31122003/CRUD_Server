@@ -7,7 +7,7 @@ const cors = require("cors")
 
 app.use(cors(
   {
-    origin:["http://localhost:4200","https://crud-server-green.vercel.app/"],
+    origin:["http://localhost:4200","https://crud-server-green.vercel.app/","https://crud-front-end-alpha.vercel.app/"],
     methods:["POST", "GET", "PUT", "DELETE"],
     credentials:true
   }
@@ -15,7 +15,7 @@ app.use(cors(
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('running ');
+  res.send('Helllo form Server ');
 });
 
 app.use(userRoutes);
