@@ -8,7 +8,7 @@ const cors = require("cors")
 app.use(cors(
   {
     origin:["http://localhost:4200"],
-    methods:["POST","GET"],
+    methods:["POST", "GET", "PUT", "DELETE"],
     credentials:true
   }
 ));
