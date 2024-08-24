@@ -23,14 +23,16 @@ router.get("/users", async (req, res) => {
   }
 });
 
-router.get("/users/:id", async (req, res) => {
+router.get('/users/:id', async (req, res) => {
+  const userId = req.params.id;
   try {
-    console.log("id", req.params["id"]);
-    let user = await getUser(req.params["id"]);
-    res.send(user);
-  } catch (err) {
-    console.error('Error fetching user:', err);
-    res.status(404).send({ error: 'User not found' });
+    const user = await getUser(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
   }
 });
 
