@@ -7,7 +7,7 @@ const cors = require("cors")
 
 app.use(cors(
   {
-    origin:["http://localhost:4200"],
+    origin:["http://localhost:4200","https://crud-server-green.vercel.app/"],
     methods:["POST", "GET", "PUT", "DELETE"],
     credentials:true
   }
