@@ -8,7 +8,8 @@ const cors = require("cors")
 app.use(cors({
   origin: ["http://localhost:4200", "https://crud-server-green.vercel.app", "https://crud-front-end-alpha.vercel.app","https://master--charming-alfajores-09b2d6.netlify.app/"],
   methods: ["POST", "GET", "PUT", "DELETE"],
-  credentials: true
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 
