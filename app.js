@@ -6,10 +6,9 @@ const port = 3000;
 const cors = require("cors")
 
 app.use(cors({
-  origin: ["http://localhost:4200", "https://crud-front-end-alpha.vercel.app"],
+  origin: ["http://localhost:4200", "https://crud-server-green.vercel.app", "https://crud-front-end-alpha.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
+  credentials: true
 }));
 
 
