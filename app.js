@@ -9,7 +9,7 @@ app.use(cors({
   origin: ["http://localhost:4200", "https://crud-server-green.vercel.app", "https://crud-front-end-alpha.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization", "Pragma"]
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 
@@ -24,7 +24,7 @@ app.use(userRoutes);
 
 async function connectdb() {
   try {
-    await mongoose.connect("mongodb+srv://sonne_trader:3HJJAa2i89X60tUV@sonnetrader.4v6ta.mongodb.net/", {
+    await mongoose.connect("mongodb+srv://tanmaybagal03:gIpFLyoYK8Q7pc2p@userdb.6pkzh.mongodb.net/", {
       dbName: "UserDB"
     });
     console.log('Connected to MongoDB');
